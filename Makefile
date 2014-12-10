@@ -1,5 +1,5 @@
 test:
 	./test/test
-	./test/test | ./node_modules/.bin/bunyan -o short
+	./test/test | ./node_modules/.bin/bunyan 
 
 .PHONY: test

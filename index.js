@@ -1,4 +1,5 @@
 var debug = require('debug');
+var path = require('path');
 
 var bunyan;
 
@@ -18,7 +19,7 @@ function setLogger (name) {
 }
 
 if (bunyan) {
-  setLogger(process.title);
+  setLogger(path.basename(process.argv[1]));
 } else {
   var levels = ['debug', 'info', 'warn', 'error'];
 

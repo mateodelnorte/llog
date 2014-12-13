@@ -1,6 +1,6 @@
 {
   "name": "llog",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "simple multi-level application logging module",
   "main": "index.js",
   "scripts": {
@@ -15,7 +15,7 @@
   "dependencies": {
     "debug": "~0.8.1"
   },
-  "optionalDependencies": {
-    "bunyan": "^1.2.3"
+  "peerDependencies": {
+    "bunyan": "*"
   }
 }

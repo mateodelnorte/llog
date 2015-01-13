@@ -20,7 +20,7 @@ function setLogger (name) {
     var fn = logger[level].bind(logger);
 
     function _getCorrelationId () {
-      var args = Array.prototype.slice(arguments);
+      var args = Array.prototype.slice.call(arguments, 0);
       var obj = typeof args[0] === 'object' ? args[0] : {};
       if (process.domain && process.domain.correlationId) {
         obj.correlationId = process.domain.correlationId;

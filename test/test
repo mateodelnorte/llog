@@ -6,3 +6,14 @@ log.debug('debug');
 log.info('info');
 log.warn('warn');
 log.error('error');
+
+var d = require('domain').create();
+
+d.correlationId = 'test-value';
+
+d.run(function () {
+  log.debug('debug');
+  log.info('info');
+  log.warn('warn');
+  log.error('error');  
+});

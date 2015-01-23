@@ -1,5 +1,30 @@
 var debug = require('debug');
+var fs = require('fs');
 var path = require('path');
+
+findPkgJson = function (dir) {
+
+  var files = fs.readdirSync(dir);
+  
+  if (~files.indexOf('package.json')) {
+    return path.join(dir, 'package.json');
+  }
+  
+  if (dir === '/') {
+    throw new Error('Could not find package.json up from: ' + dir);
+  }
+  else if (!dir || dir === '.') {
+    throw new Error('Cannot find package.json from unspecified directory');
+  }
+  
+  return findPkgJson(path.dirname(dir));
+};
+
+var pkgJson = findPkgJson(process.cwd()), version;
+
+if (pkgJson) {
+  version = require(pkgJson).version;
+}
 
 var bunyan;
 
@@ -24,6 +49,9 @@ function setLogger (name) {
       var obj = typeof args[0] === 'object' ? args[0] : {};
       if (process.domain && process.domain.correlationId) {
         obj.correlationId = process.domain.correlationId;
+      }
+      if (version) {
+        obj.version = version;
       }
       if (typeof args[0] === 'object') {
         args[0] = obj;

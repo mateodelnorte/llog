@@ -72,7 +72,8 @@ function setLogger (name) {
 }
 
 if (bunyan) {
-  setLogger(path.basename(process.title !== 'node' ? process.title : process.argv[1]));
+  var title = path.basename(process.title) !== 'node' ? process.title : path.basename(process.argv[1]);
+  setLogger(title);
 } else {
   var levels = ['debug', 'info', 'warn', 'error'];
 

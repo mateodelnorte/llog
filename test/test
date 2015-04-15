@@ -2,6 +2,7 @@
 
 var log = require('../');
 
+log.trace('trace');
 log.debug('debug');
 log.info('info');
 log.warn('warn');
@@ -12,8 +13,9 @@ var d = require('domain').create();
 d.correlationId = 'test-value';
 
 d.run(function () {
+  log.trace('trace');
   log.debug('debug');
   log.info('info');
   log.warn('warn');
-  log.error('error');  
+  log.error('error');
 });

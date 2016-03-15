@@ -10,6 +10,6 @@ var log = require('llog');
 
 log.debug('some info'); // prints 'debug some info' to stdout
 log.info('some info'); // prints 'info some info' to stdout
-log.info('warn info'); // prints 'warn some info' to stdout
+log.warn('some info'); // prints 'warn some info' to stdout
 log.error('some error'); // prints 'error some error' to stdout
 ```

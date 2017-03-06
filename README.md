@@ -39,7 +39,7 @@ DEBUG=trace,info,warn,error node app.js
 llog will automatically detect if `bunyan` is installed as a peer dependency and, if so, automatically upgrade to json logging. Because `bunyan` uses `process.env.LOG_LEVEL` as its level indicator (as opposed to `debug`'s `DEBUG` variable, the steps for moving to json logs are: 
 
 1. `npm install --save buynan`
-2. execute your application using `LOG_LEVEL=10 node app` instead of using DEBUG. Log levels map to the following numbers. Higher levels are always included when specifying a level. 
+2. execute your application using `LOG_LEVEL=10 node app` instead of using `DEBUG`. Log levels map to the following numbers. Higher levels are always included when specifying a level. 
 
 Bunyan log levels can be found at https://github.com/trentm/node-bunyan#levels. 
 

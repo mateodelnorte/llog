@@ -1,9 +1,11 @@
 {
   "name": "llog",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "simple multi-level application logging module",
   "main": "index.js",
   "scripts": {
+    "perf-test": "time node ./test/load-test.js >> /dev/null",
+    "pre-test": "npm install bunyan pino",
     "test": "make test"
   },
   "repository": {
@@ -15,7 +17,11 @@
   "dependencies": {
     "debug": "~0.8.1"
   },
-  "peerDependencies": {
-    "bunyan": "*"
+  "optionalDependencies": {
+    "bunyan": "*",
+    "pino": "^4.7.1"
+  },
+  "devDependencies": {
+    "mocha": "^3.5.3"
   }
 }

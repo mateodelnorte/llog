@@ -1,4 +1,10 @@
-var bunyan;
+var bunyan, pino;
+
+try {
+  pino = require('pino');
+} catch (err) {
+  pino = null;
+}
 
 try {
   bunyan = require('bunyan');
@@ -6,8 +12,10 @@ try {
   bunyan = null;
 }
 
-if (bunyan) {
-  module.exports = require('./lib/bunyan'); 
+if (pino) {
+  module.exports = require('./lib/pino');
+} else if (bunyan) {
+  module.exports = require('./lib/bunyan');
 } else {
   module.exports = require('./lib/debug');
 }

@@ -1,6 +1,6 @@
 {
   "name": "llog",
-  "version": "0.0.15",
+  "version": "0.0.16",
   "description": "simple multi-level application logging module",
   "main": "index.js",
   "scripts": {

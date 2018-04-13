@@ -13,6 +13,7 @@ test:
 	LOG_LEVEL=10 ./test/test | ./node_modules/node-jq/bin/jq
 	rm -rf ./node_modules/pino
 	echo "testing bunyan mode"
-	npm i bunyan 2> /dev/null && LOG_LEVEL=10 ./test/test | ./node_modules/.bin/bunyan
+	npm i bunyan 2> /dev/null
+	LOG_LEVEL=10 ./test/test | ./node_modules/.bin/bunyan
 
 .PHONY: test

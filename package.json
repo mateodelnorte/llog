@@ -15,10 +15,9 @@
   "author": "mattwalters5@gmail.com",
   "license": "BSD-2-Clause",
   "dependencies": {
-    "debug": "~0.8.1",
-    "llog": "0.0.16"
+    "debug": "^3.1.0"
   },
   "devDependencies": {
-    "mocha": "^3.5.3"
+    "mocha": "^5.2.0"
   }
 }

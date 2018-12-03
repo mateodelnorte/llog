@@ -1,6 +1,8 @@
 llog
 ====
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/mateodelnorte/llog.svg)](https://greenkeeper.io/)
+
 llog is a simple logging module. llog is intended for use in applications, not libraries. It provides level-based debugging (trace|debug|info|warn|error|fatal). `note: For adding detailed debug statements in libraries, use TJ's `debug` module.`
 
 As an added bonus, llog provides a simple upgrade path from plain text to json logging via either pino or bunyan. `llog` will look for `pino` or `bunyan` at load time and automatically use them as a provider if present. This means you can write your apps with non-json logging when starting, and auto-magically all your logs to json logging with a simple `npm i --save pino`. 

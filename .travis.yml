@@ -2,7 +2,7 @@ language: node_js
 node_js:
   - '14'
   - '16'
-  - 'node'
+  - 'stable'
 cache: npm
 notifications:
   email: false
@@ -18,7 +18,7 @@ jobs:
   include:
     - stage: deploy
       if: branch == master && !fork
-      node_js: '8.17.0' # pre-installed version
+      node_js: "stable"
       script:
         - npm install -g semantic-release@^15
         - semantic-release

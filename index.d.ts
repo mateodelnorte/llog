@@ -1,7 +1,4 @@
-declare type BunyanLogFunction = (formatMessage?: string, ...interpolationArg: unknown[]) => void;
-declare type DebugLogFunction = (formatMessage?: string, ...interpolationArg: unknown[]) => void;
-declare type PinoLogFunction = (merginObject?: unknown, formatMessage?: string, ...interpolationArg: unknown[]) => void;
-declare type LlogFunction = BunyanLogFunction | DebugLogFunction | PinoLogFunction;
+declare type LlogFunction = (merginObject?: string | Error | unknown, formatMessage?: string, ...interpolationArg: unknown[]) => void;
 
 declare interface logger {
   trace: LlogFunction,

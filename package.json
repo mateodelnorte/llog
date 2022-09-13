@@ -1,23 +1,24 @@
 {
-  "name": "llog",
-  "version": "0.0.0-development",
+  "author": "mattwalters5@gmail.com",
+  "dependencies": {
+    "debug": "^4.3.4"
+  },
   "description": "simple multi-level application logging module",
+  "devDependencies": {
+    "mocha": "10.0.0"
+  },
+  "license": "BSD-2-Clause",
   "main": "index.js",
+  "name": "llog",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:mateodelnorte/llog.git"
+  },
   "scripts": {
     "perf-test": "time node ./test/load-test.js >> /dev/null",
     "pre-test": "npm install bunyan pino --no-save",
     "test": "make test"
   },
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:mateodelnorte/llog.git"
-  },
-  "author": "mattwalters5@gmail.com",
-  "license": "BSD-2-Clause",
-  "dependencies": {
-    "debug": "^4.3.4"
-  },
-  "devDependencies": {
-    "mocha": "10.0.0"
-  }
+  "types": "index.d.ts",
+  "version": "0.0.0-development"
 }

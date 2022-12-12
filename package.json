@@ -5,7 +5,7 @@
   },
   "description": "simple multi-level application logging module",
   "devDependencies": {
-    "mocha": "10.0.0"
+    "mocha": "10.2.0"
   },
   "license": "BSD-2-Clause",
   "main": "index.js",
